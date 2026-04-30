@@ -34,7 +34,7 @@ public class LeerServlet extends HttpServlet {
             System.out.println("✅ Statement creado correctamente.");
 
             // 3️⃣ Consulta SQL
-            String sql = "SELECT id, Nombre, Apellido, Telefono, Correo, Especialidad, Fecha, Horario " + "FROM reservas ORDER BY Fecha DESC, HoraDeEntrada ASC";
+            String sql = "SELECT id, Nombre, Apellido, Telefono, Correo, Especialidad, Fecha, Horario " + "FROM reservas ORDER BY Fecha DESC, Horario ASC";
             System.out.println("📘 Ejecutando SQL: " + sql);
 
             // 4️⃣ Ejecutar la consulta
