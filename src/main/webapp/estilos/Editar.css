@@ -1,0 +1,152 @@
+@charset "UTF-8";
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #d6e6ff, #c2d9ff, #eaf2ff);
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(to right, #0a3d62, #3c91e6);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+/* LOGO + TEXTO */
+.header-izq {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.img-logo {
+    height: 55px;
+}
+
+.titulo-logo {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* NAV */
+nav a {
+    color: #cfe8ff;
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 17px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* CONTENIDO */
+.contenedor {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+h1 {
+    font-size: 38px;
+    color: #0a3d62;
+}
+
+.subtitulo {
+    font-size: 22px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* FORMULARIO */
+.formulario {
+    background: white;
+    width: 500px;
+    margin: 20px auto;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    text-align: left;
+    transition: 0.3s;
+}
+
+.formulario:hover {
+    transform: translateY(-3px);
+}
+
+.formulario label {
+    font-size: 14px;
+    display: block;
+    margin-top: 12px;
+    color: #0a3d62;
+}
+
+/* INPUTS */
+.formulario input,
+.formulario select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: 0.2s;
+}
+
+.formulario input:focus,
+.formulario select:focus {
+    border-color: #1e90ff;
+    outline: none;
+}
+
+/* BOTÓN */
+.formulario button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 14px;
+    background: linear-gradient(to right, #1e90ff, #3c91e6);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.formulario button:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(to right, #0c7cd5, #2f7fd8);
+}
+
+/* FOOTER */
+.footer {
+    background-color: #0b3c49;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+}
+
+.telefonos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 10px 0;
+}
+
+.telefonos a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-bottom: 2px solid transparent;
+    transition: 0.3s;
+}
+
+.telefonos a:hover {
+    color: #74b9ff;
+    border-bottom: 2px solid #74b9ff;
+}

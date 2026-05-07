@@ -33,19 +33,19 @@
          action="${pageContext.request.contextPath}/AltaServlet" method="post">
 
         <label>Nombre</label>
-        <input type="text" placeholder="Ingrese su nombre" required>
+        <input type="text" name="Nombre" placeholder="Ingrese su nombre" required>
 
         <label>Apellido</label>
-        <input type="text" placeholder="Ingrese su apellido" required>
+        <input type="text" name="Apellido" placeholder="Ingrese su apellido" required>
 
-        <label>Teléfono</label>
-        <input type="tel" placeholder="Ej: 11 2345 6789" required>
+        <label>Telefono</label>
+        <input type="tel" name= "Telefono" placeholder="Ej: 11 2345 6789" required>
 
-        <label>Correo electrónico</label>
-        <input type="email" placeholder="ejemplo@gmail.com" required>
+        <label>Correo</label>
+        <input type="email" name= "Correo" placeholder="ejemplo@gmail.com" required>
 
         <label>Especialidad</label>
-        <select required>
+        <select required name= "Especialidad">
             <option value="">Seleccione</option>
             <option>Clínica Médica</option>
             <option>Pediatría</option>
@@ -54,10 +54,10 @@
         </select>
 
         <label>Fecha</label>
-        <input type="date" required>
+        <input type="date" name= "Fecha" required>
 
         <label>Horario</label>
-        <input type="time" required>
+        <input type="time" name= "Horario" required>
 
         <button type="submit">Confirmar Turno</button>
           <a href="${pageContext.request.contextPath}/LeerServlet"></a>

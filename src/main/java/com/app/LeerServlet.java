@@ -34,7 +34,8 @@ public class LeerServlet extends HttpServlet {
             System.out.println("✅ Statement creado correctamente.");
 
             // 3️⃣ Consulta SQL
-            String sql = "SELECT id, Nombre, Apellido, Telefono, Correo, Especialidad, Fecha, Horario " + "FROM reservas ORDER BY Fecha DESC, Horario ASC";
+            String sql = "SELECT id, Nombre, Apellido, Telefono, Correo, Especialidad, Fecha, Horario " +
+                    "FROM reservas ORDER BY `Fecha` DESC, Horario ASC";
             System.out.println("📘 Ejecutando SQL: " + sql);
 
             // 4️⃣ Ejecutar la consulta
@@ -54,16 +55,12 @@ public class LeerServlet extends HttpServlet {
                 System.out.println("Horario: " + resultados.getString("Horario"));
             }
 
-            // ⚠️ Mover el cursor al inicio para que el JSP pueda recorrer el ResultSet
+            // 👇 ESTO FALTABA
             resultados.beforeFirst();
 
-            // 5️⃣ Guardar el resultado como atributo de la request
             request.setAttribute("conjuntoResultados", resultados);
-
-            // 6️⃣ Redirigir a la vista JSP
-            System.out.println("➡️ Redirigiendo a vistas/VerReserva.jsp");
-            request.getRequestDispatcher("vistas/VerReserva.jsp").forward(request, response);
-
+            request.getRequestDispatcher("/vistas/VerReserva.jsp").forward(request, response);
+            
         } catch (SQLException e) {
             e.printStackTrace();
             response.getWriter().println("Error al leer las reservas: " + e.getMessage());

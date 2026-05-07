@@ -18,10 +18,10 @@ public class AltaServlet extends HttpServlet {
 		String Nombre= request.getParameter("Nombre");
 		String Apellido = request.getParameter("Apellido");
 		String Telefono = request.getParameter("Telefono");
-		String Correo = request.getParameter("Correo electronico");
-		String Especialidad = request.getParameter("especialidad");
-		String Fecha = request.getParameter("fecha");
-		String Horario = request.getParameter("horario");
+		String Correo = request.getParameter("Correo");
+		String Especialidad = request.getParameter("Especialidad");
+		String Fecha = request.getParameter("Fecha");
+		String Horario = request.getParameter("Horario");
 
 		//FALTA VALIDACIÓN DE DATOS
 		

@@ -1,4 +1,4 @@
-package com.logica;
+package com.app;
 
 //Importación de clases necesarias para manejar errores y conexiones a la base de datos
 import java.io.IOException;
@@ -31,10 +31,10 @@ public class EliminarServlet extends HttpServlet {
 		if (idsSeleccionados != null && idsSeleccionados.length > 0) {
 			// Conectar a la base de datos
 			
-			try (Connection conexion = ConexionBD.obtenerConexion()) {
+			try (Connection conexion = ConexionBD.getConexion()) {
 				// SQL para eliminar un registro por ID
 				
-				String sql = "DELETE FROM datosestudiantes WHERE idEstudiante = ?";
+				String sql = "DELETE FROM reservas WHERE id = ?";
 				// Preparar la declaración SQL
 				
 				try (PreparedStatement statement = conexion.prepareStatement(sql)) {
@@ -65,22 +65,22 @@ public class EliminarServlet extends HttpServlet {
 					if (algunaEliminacionExitosa) {
 						response.sendRedirect(request.getContextPath() + "/LeerDatos"); // Redirigir a la lista de datos
 					} else {
-						response.sendRedirect(request.getContextPath() + "/vistas/error.jsp"); // Redirigir a una página
+						response.sendRedirect(request.getContextPath() + "/vistas/Eliminar.jsp"); // Redirigir a una página
 																								// de error
 					}
 				}
 			} catch (SQLException e) {
 				e.printStackTrace(); // Imprimir el error en la consola
-				response.sendRedirect(request.getContextPath() + "/vistas/error.jsp"); // Redirigir a una página de
+				response.sendRedirect(request.getContextPath() + "/vistas/Eliminar.jsp"); // Redirigir a una página de
 																						// error
 			}
 		} else {
 			// Si no hay IDs seleccionados, verifica si se proporcionó un ID único
 			if (idUnico != null && !idUnico.trim().isEmpty()) {
 				// Conectar a la base de datos
-				try (Connection conexion = ConexionBD.obtenerConexion()) {
+				try (Connection conexion = ConexionBD.getConexion()) {
 					// SQL para eliminar un registro por ID
-					String sql = "DELETE FROM datosestudiantes WHERE idEstudiante = ?";
+					String sql = "DELETE FROM reservas WHERE id = ?";
 					// Preparar la declaración SQL
 					try (PreparedStatement statement = conexion.prepareStatement(sql)) {
 						// Convertir el ID único a un número entero
@@ -94,7 +94,7 @@ public class EliminarServlet extends HttpServlet {
 							// Redirigir a la lista de datos después de eliminar
 							response.sendRedirect(request.getContextPath() + "/LeerDatos");
 						} else {
-							response.sendRedirect(request.getContextPath() + "/vistas/error.jsp"); // Redirigir a una
+							response.sendRedirect(request.getContextPath() + "/vistas/Eliminar.jsp"); // Redirigir a una
 																									// página de error
 						}
 					}

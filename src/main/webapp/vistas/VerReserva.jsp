@@ -16,12 +16,13 @@
 		<h1>NCN Reservas</h1>
 		<nav>
 			<ul>
-				<li><a>
+				<li><a
 					href="${pageContext.request.contextPath}/vistas/index.jsp">Inicio</a></li>
-				<li><a>
+				<li><a
 					href="${pageContext.request.contextPath}/vistas/reservas.jsp">Reservas</a></li>
-				<li><a>
+				<li><a
 					href="${pageContext.request.contextPath}/vistas/Contacto.jsp">Contacto</a></li>
+					
 			</ul>
 		</nav>
 	</header>
@@ -36,7 +37,7 @@
 			<button class="enviar" onclick="buscarReserva()">Buscar</button>
 		</div>
 
-		<section class="salas" id="lista-reservas">
+		<section class="reservas-grid" id="lista-reservas">
 			<%
         ResultSet resultados = (ResultSet) request.getAttribute("conjuntoResultados");
         if (resultados != null) {
@@ -49,22 +50,25 @@
               while (resultados.next()) {
       %>
 			<div class="card">
-				<h3><%= resultados.getString("NombreApellido") %></h3>
+				<h3><%= resultados.getString("Nombre") %></h3>
 				<p>
-					<b>Curso:</b>
-					<%= resultados.getString("Curso") %></p>
+					<b>Apellido:</b>
+					<%= resultados.getString("Apellido") %></p>
+				<p>
+					<b>Telefono:</b>
+					<%= resultados.getString("Telefono") %></p>
+				<p>
+					<b>Correo:</b>
+					<%= resultados.getString("Correo") %></p>
+				<p>
+					<b>Especialidad:</b>
+					<%= resultados.getString("Especialidad") %></p>
 				<p>
 					<b>Fecha:</b>
 					<%= resultados.getString("Fecha") %></p>
 				<p>
-					<b>Hora de entrada:</b>
-					<%= resultados.getString("HoraDeEntrada") %></p>
-				<p>
-					<b>Hora de salida:</b>
-					<%= resultados.getString("HoraDeSalida") %></p>
-				<p>
-					<b>Laboratorio:</b>
-					<%= resultados.getString("LaboratorioSala") %></p>
+					<b>Horario:</b>
+					<%= resultados.getString("Horario") %></p>
 			</div>
 			<%
               }
